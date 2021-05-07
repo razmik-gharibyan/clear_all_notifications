@@ -1,6 +1,11 @@
 # clear_all_notifications
 
-A new Flutter plugin for clearing all Android and iOS active notifications
+A Flutter plugin for clearing all Android and iOS active notifications
+
+To clear all active notifications call
+```dart
+await ClearAllNotifications.clear();
+```
 
 ## Getting Started
 
