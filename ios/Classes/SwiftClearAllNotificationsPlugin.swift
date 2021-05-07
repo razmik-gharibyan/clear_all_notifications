@@ -10,7 +10,7 @@ public class SwiftClearAllNotificationsPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    if (call.method.elementsEqual("clear_all_notifications")) {
+    if (call.method.elementsEqual("clear")) {
       channelMethodClearAllNotifications(result: result)
     }
     result("iOS " + UIDevice.current.systemVersion)
