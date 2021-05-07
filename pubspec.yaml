@@ -2,7 +2,7 @@ name: clear_all_notifications
 description: A Flutter plugin for clearing all Android and iOS active notifications
 version: 0.0.1
 author: Razmik Gharibyan
-homepage:
+homepage: https://github.com/razmik-gharibyan/clear_all_notifications
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
