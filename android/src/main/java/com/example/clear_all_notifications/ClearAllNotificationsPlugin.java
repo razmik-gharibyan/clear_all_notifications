@@ -32,13 +32,7 @@ public class ClearAllNotificationsPlugin implements FlutterPlugin, MethodCallHan
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("clear")) {
-      try {
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.cancelAll();
-        result.success(true);
-      } catch (Exception e) {
-        result.error("Can not clear all notifications", e.getMessage(), e);
-      }
+      channelMethodClearAllNotifications(result);
     } else {
       result.notImplemented();
     }
@@ -47,5 +41,15 @@ public class ClearAllNotificationsPlugin implements FlutterPlugin, MethodCallHan
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     channel.setMethodCallHandler(null);
+  }
+
+  private void channelMethodClearAllNotifications(@NonNull Result result) {
+    try {
+      NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+      notificationManager.cancelAll();
+      result.success(true);
+    } catch (Exception e) {
+      result.error("Can not clear all notifications", e.getMessage(), e);
+    }
   }
 }
