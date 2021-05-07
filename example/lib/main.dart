@@ -14,7 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
 
   @override
   void initState() {
@@ -23,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initClearNotificationsState() async {
-    await ClearAllNotifications.clear;
+    ClearAllNotifications.clear();
   }
 
   @override
@@ -31,10 +30,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Clear all notifications plugin'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Text('Simple plugin to clear all active notifications'),
         ),
       ),
     );
